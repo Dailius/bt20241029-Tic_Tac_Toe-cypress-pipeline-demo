@@ -32,5 +32,10 @@ jobs:
 
     - name: Start React App in Background
       run: npm dev &
+      env:
+          CI: false # Prevent React from treating warnings as errors
 
+    - name: Wait for React App to be Ready
+      run: npx wait-on http://localhost:3000
+      
     - run: npx cypress run
