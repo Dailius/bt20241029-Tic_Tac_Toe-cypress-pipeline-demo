@@ -7,6 +7,8 @@ describe('template spec', () => {
   });
 
   it('passes', () => {
+
+    
     cy.visit('http://localhost:5173/');
     cy.my_command("TC passes","Monday");
   });
